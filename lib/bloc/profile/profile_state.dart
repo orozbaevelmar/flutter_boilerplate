@@ -1,21 +1,29 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 part of 'profile_bloc.dart';
 
-class ProfileState {
+sealed class ProfileState {}
+
+class ProfileInitial extends ProfileState {}
+
+class ProfileLoaded extends ProfileState {
   ProfileModel? profileModel;
-  XFile? imageFile;
-  ProfileState({
+
+  ProfileLoaded({
     this.profileModel,
-    this.imageFile,
   });
 
-  ProfileState copyWith({
+  ProfileLoaded copyWith({
     ProfileModel? profileModel,
-    XFile? imageFile,
   }) {
-    return ProfileState(
+    return ProfileLoaded(
       profileModel: profileModel ?? this.profileModel,
-      imageFile: imageFile,
     );
   }
+}
+
+class ProfileError extends ProfileState {
+  final String message;
+  ProfileError({
+    required this.message,
+  });
 }

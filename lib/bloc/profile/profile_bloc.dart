@@ -1,34 +1,60 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_boilerplate/constants/constants.dart';
 import 'package:flutter_boilerplate/model/profile.dart';
 import 'package:flutter_boilerplate/repository/profile.dart';
-import 'package:image_picker/image_picker.dart';
 
 part 'profile_event.dart';
 part 'profile_state.dart';
 
 class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
   late ProfileRepository repository;
-  ProfileBloc() : super(ProfileState()) {
+  ProfileBloc() : super(ProfileInitial()) {
     repository = ProfileRepository();
     on<ProfileGetEvent>(_getUser);
+    on<ProfileSaveEvent>(_save);
+    on<ProfileChangeImageEvent>(_changeImage);
   }
 
-  _setImage(ProfileSetImageEvent event, emit) async {
-    emit(state.copyWith(imageFile: event.file));
+  _changeImage(ProfileChangeImageEvent event, emit) async {
+    emit(ProfileInitial());
+    final response = await repository.changeImage(event.imagePath);
+    response.fold(
+      (l) => {
+        MToast().showRed(l),
+      },
+      (r) => {
+        emit(ProfileLoaded().copyWith(profileModel: r)),
+        MToast().showRed('Ваши данные успешно изменены'),
+      },
+    );
   }
 
   _save(ProfileSaveEvent event, emit) async {
-    await repository.saveUser(event.profileModel, event.imageFile);
-    var result = await repository.getUser();
-    if (result is ProfileModel) {
-      emit(state.copyWith(profileModel: result));
-    }
+    emit(ProfileInitial());
+
+    final response = await repository.saveUser(event.profileModel);
+    response.fold(
+      (l) => {
+        MToast().showRed(l),
+        emit(
+          ProfileLoaded().copyWith(profileModel: event.oldModel),
+        ),
+      },
+      (r) => {
+        emit(
+          ProfileLoaded().copyWith(profileModel: r),
+        ),
+        MToast().showRed('Ваши данные успешно изменены'),
+      },
+    );
   }
 
   _getUser(ProfileGetEvent event, emit) async {
     var result = await repository.getUser();
     if (result is ProfileModel) {
-      emit(state.copyWith(profileModel: result));
+      emit(ProfileLoaded().copyWith(profileModel: result));
+    } else {
+      emit(ProfileError(message: 'Не удалось загрузить профиль'));
     }
   }
 }

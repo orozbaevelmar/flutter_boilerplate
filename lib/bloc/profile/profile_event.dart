@@ -6,18 +6,18 @@ sealed class ProfileEvent {
 
 class ProfileGetEvent extends ProfileEvent {}
 
-class ProfileSetImageEvent extends ProfileEvent {
-  XFile? file;
-  ProfileSetImageEvent({
-    required this.file,
+class ProfileChangeImageEvent extends ProfileEvent {
+  String? imagePath;
+  ProfileChangeImageEvent({
+    required this.imagePath,
   });
 }
 
 class ProfileSaveEvent extends ProfileEvent {
-  XFile? imageFile;
   ProfileModel profileModel;
+  ProfileModel? oldModel;
   ProfileSaveEvent({
     required this.profileModel,
-    required this.imageFile,
+    required this.oldModel,
   });
 }
