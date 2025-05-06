@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_boilerplate/bloc/cubit/theme_cubit.dart';
+import 'package:flutter_boilerplate/stuffs/bloc/cubit/theme_cubit.dart';
 
 class CustomToggleTheme extends StatefulWidget {
   const CustomToggleTheme({super.key});

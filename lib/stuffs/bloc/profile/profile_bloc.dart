@@ -1,7 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_boilerplate/constants/constants.dart';
-import 'package:flutter_boilerplate/model/profile.dart';
-import 'package:flutter_boilerplate/repository/profile.dart';
+import 'package:flutter_boilerplate/stuffs/constants/constants.dart';
+import 'package:flutter_boilerplate/stuffs/model/profile.dart';
+import 'package:flutter_boilerplate/stuffs/repository/profile.dart';
 
 part 'profile_event.dart';
 part 'profile_state.dart';

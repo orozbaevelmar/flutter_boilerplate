@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_boilerplate/constants/constants.dart';
-import 'package:flutter_boilerplate/ui_presentation/widgets/custom_button.dart';
+import 'package:flutter_boilerplate/stuffs/constants/constants.dart';
+import 'package:flutter_boilerplate/stuffs/ui_presentation/widgets/custom_button.dart';
 
 class ShowDialog {
   static Future<bool?> showDialogSetting(

@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:flutter_boilerplate/model/result.dart';
+import 'package:flutter_boilerplate/stuffs/model/result.dart';
 
 class ProductsModel {
   int? count;

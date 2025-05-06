@@ -1,10 +1,10 @@
 import 'dart:convert';
 
 import 'package:dartz/dartz.dart';
-import 'package:flutter_boilerplate/constants/constants.dart';
-import 'package:flutter_boilerplate/model/profile.dart';
-import 'package:flutter_boilerplate/utils/dependency_injection.dart';
-import 'package:flutter_boilerplate/utils/loc_secure_storage.dart';
+import 'package:flutter_boilerplate/stuffs/constants/constants.dart';
+import 'package:flutter_boilerplate/stuffs/model/profile.dart';
+import 'package:flutter_boilerplate/stuffs/utils/dependency_injection.dart';
+import 'package:flutter_boilerplate/stuffs/utils/loc_secure_storage.dart';
 import 'package:http/http.dart' as http;
 
 class ProfileRepository {

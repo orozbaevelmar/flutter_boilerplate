@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_boilerplate/bloc/cubit/counter_cubit.dart';
-import 'package:flutter_boilerplate/bloc/cubit/theme_cubit.dart';
-import 'package:flutter_boilerplate/ui_presentation/screens/main_screen.dart';
+import 'package:flutter_boilerplate/stuffs/bloc/cubit/counter_cubit.dart';
+import 'package:flutter_boilerplate/stuffs/bloc/cubit/theme_cubit.dart';
+import 'package:flutter_boilerplate/stuffs/ui_presentation/screens/main_screen.dart';
 
 void main() {
   runApp(const MyApp());

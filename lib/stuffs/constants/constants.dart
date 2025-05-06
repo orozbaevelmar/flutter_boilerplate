@@ -4,7 +4,7 @@ export 'image_constant.dart';
 export 'icon_constant.dart';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_boilerplate/constants/color_constant.dart';
+import 'package:flutter_boilerplate/stuffs/constants/color_constant.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 class AppLaunch {

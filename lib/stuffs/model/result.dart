@@ -1,8 +1,8 @@
 import 'dart:convert';
 
-import 'package:flutter_boilerplate/model/attributes.dart';
-import 'package:flutter_boilerplate/model/category.dart';
-import 'package:flutter_boilerplate/model/discount.dart';
+import 'package:flutter_boilerplate/stuffs/model/attributes.dart';
+import 'package:flutter_boilerplate/stuffs/model/category.dart';
+import 'package:flutter_boilerplate/stuffs/model/discount.dart';
 
 class Results {
   int? id;

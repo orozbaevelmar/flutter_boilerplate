@@ -1,10 +1,10 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_boilerplate/model/load_more/load_more.dart';
-import 'package:flutter_boilerplate/model/product.dart';
-import 'package:flutter_boilerplate/model/result.dart';
-import 'package:flutter_boilerplate/repository/product.dart';
-import 'package:flutter_boilerplate/utils/m_strings.dart';
+import 'package:flutter_boilerplate/stuffs/model/load_more/load_more.dart';
+import 'package:flutter_boilerplate/stuffs/model/product.dart';
+import 'package:flutter_boilerplate/stuffs/model/result.dart';
+import 'package:flutter_boilerplate/stuffs/repository/product.dart';
+import 'package:flutter_boilerplate/stuffs/utils/m_strings.dart';
 
 part 'product_event.dart';
 part 'product_state.dart';

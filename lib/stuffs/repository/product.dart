@@ -1,9 +1,9 @@
 import 'dart:convert';
 import 'package:dartz/dartz.dart';
-import 'package:flutter_boilerplate/model/product.dart';
-import 'package:flutter_boilerplate/utils/dependency_injection.dart';
-import 'package:flutter_boilerplate/utils/failure.dart';
-import 'package:flutter_boilerplate/utils/loc_secure_storage.dart';
+import 'package:flutter_boilerplate/stuffs/model/product.dart';
+import 'package:flutter_boilerplate/stuffs/utils/dependency_injection.dart';
+import 'package:flutter_boilerplate/stuffs/utils/failure.dart';
+import 'package:flutter_boilerplate/stuffs/utils/loc_secure_storage.dart';
 import 'package:http/http.dart' as http;
 
 class ProductsRepository {
